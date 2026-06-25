@@ -52,39 +52,40 @@ function startCountdown() {
 function setupForm() {
     const form = document.getElementById("footballForm");
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-        const nome = document.getElementById("nome").value.trim();
-        const goleiro = document.getElementById("goleiro").checked ? "Sim" : "Não";
+    const nome = document.getElementById("nome").value.trim();
+    const goleiro = document.getElementById("goleiro").checked ? "Sim" : "Não";
 
-        if (!validateForm(nome)) {
-            alert("Digite seu nome!");
-            return;
-        }
+    if (!validateForm(nome)) {
+        alert("Digite seu nome!");
+        return;
+    }
 
-        const data = new Date().toLocaleString();
+    const data = new Date().toLocaleString();
 
-        const payload = {
-            nome,
-            goleiro,
-            data
-        };
+    const payload = {
+        nome,
+        goleiro,
+        data
+    };
 
-        try {
-            await sendEmail(payload);
-            await sendToSheets(payload);
+    // ⚡ LIBERA O USUÁRIO INSTANTANEAMENTE
+    launchConfetti();
+    showModal();
+    form.reset();
 
-            launchConfetti();
-            showModal();
-
-            form.reset();
-
-        } catch (error) {
-            console.error("Erro no envio:", error);
-            alert("Erro ao enviar inscrição.");
-        }
+    // 📧 ENVIO EM SEGUNDO PLANO (NÃO TRAVA UI)
+    sendEmail(payload).catch(error => {
+        console.error("Erro EmailJS:", error);
     });
+
+    sendToSheets(payload).catch(error => {
+        console.error("Erro Sheets:", error);
+    });
+});
+
 }
 
 /* ===================================

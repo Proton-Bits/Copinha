@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Futebol da Polacaida</title>
+
+<meta name="description" content="Confirme sua presença no Futebol Amistoso 2026">
+
+<link rel="icon" href="assets/favicon.ico">
+
+<!-- Google Fonts -->
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+```
+<video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/stadium.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+    <img
+        src="assets/logo.png"
+        alt="Logo Futebol"
+        class="hero-logo"
+    >
+
+    <h1>
+        FUTEBOL AMISTOSO 2026
+    </h1>
+
+    <p>
+        Prepare suas chuteiras para uma grande tarde de futebol.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#formulario" class="btn btn-primary">
+            CONFIRMAR PRESENÇA
+        </a>
+
+        <a href="#informacoes" class="btn btn-secondary">
+            SAIBA MAIS
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section" data-aos="fade-up">
+
+```
+<div class="container">
+
+    <h2>
+        Contagem Regressiva
+    </h2>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>Dias</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>Horas</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Minutos</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Segundos</small>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- INFORMAÇÕES -->
+
+<section id="informacoes" class="info-section">
+
+```
+<div class="container">
+
+    <h2 data-aos="fade-up">
+        Informações do Evento
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info-card" data-aos="zoom-in">
+
+            <div class="icon">
+                📅
+            </div>
+
+            <h3>Data</h3>
+
+            <p>
+                27/06/2026
+            </p>
+
+        </div>
+
+        <div class="info-card" data-aos="zoom-in">
+
+            <div class="icon">
+                ⏰
+            </div>
+
+            <h3>Horário</h3>
+
+            <p>
+                15h20
+            </p>
+
+        </div>
+
+        <div class="info-card" data-aos="zoom-in">
+
+            <div class="icon">
+                ⚽
+            </div>
+
+            <h3>Sorteio Automático</h3>
+
+            <p>
+                Equipes definidas pelo sistema
+            </p>
+
+        </div>
+
+        <div class="info-card" data-aos="zoom-in">
+
+            <div class="icon">
+                🏆
+            </div>
+
+            <h3>Divulgação dos Times</h3>
+
+            <p>
+                08h00
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- FORMULÁRIO -->
+
+<section id="formulario" class="form-section">
+
+```
+<div class="container">
+
+    <div class="form-card" data-aos="fade-up">
+
+        <img
+            src="assets/trophy.png"
+            alt="Troféu"
+            class="trophy"
+        >
+
+        <h2>
+            Confirmar Participação
+        </h2>
+
+        <form id="footballForm">
+
+            <div class="form-group">
+
+                <label for="nome">
+                    Nome
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+            </div>
+
+            <div class="checkbox-group">
+
+                <input
+                    type="checkbox"
+                    id="goleiro"
+                    name="goleiro"
+                >
+
+                <label for="goleiro">
+                    Sou goleiro
+                </label>
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Confirmar Participação
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+```
+
+</section>
+<!-- JOGADORES CONFIRMADOS -->
+
+<section class="players-section">
+
+    <div class="container">
+
+        <h2>⚽ Jogadores Confirmados</h2>
+
+        <div class="players-card">
+
+            <div class="players-stats">
+                <span id="totalPlayers">0 jogadores</span>
+                <span id="goalkeepers">0 goleiros</span>
+            </div>
+
+            <ul id="playersList" class="players-list">
+
+                <li>Carregando jogadores...</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AVISO -->
+
+<section class="warning-section">
+
+```
+<div class="container">
+
+    <div class="warning-card">
+
+        <h2>
+            IMPORTANTE
+        </h2>
+
+        <p>
+            O sistema analisará todos os jogadores inscritos.
+        </p>
+
+        <p>
+            As equipes serão sorteadas automaticamente.
+        </p>
+
+        <p>
+            Os times serão divulgados às 08h00 do dia 27/06/2026.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+```
+<div class="container">
+
+    <p>
+        © 2026 Futebol Amistoso • Todos os direitos reservados
+    </p>
+
+</div>
+```
+
+</footer>
+
+<!-- MODAL SUCESSO -->
+
+<div id="successModal" class="modal">
+
+```
+<div class="modal-content">
+
+    <h2>
+        🏆 INSCRIÇÃO CONFIRMADA
+    </h2>
+
+    <p>
+        Sua participação foi registrada com sucesso.
+    </p>
+
+    <p>
+        Os times serão sorteados automaticamente.
+    </p>
+
+    <p>
+        A divulgação acontecerá no grupo às 08h00 do dia 27/06/2026.
+    </p>
+
+    <button id="closeModal">
+        Fechar
+    </button>
+
+</div>
+```
+
+</div>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- EmailJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Confetti -->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<!-- JS -->
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

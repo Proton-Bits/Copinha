@@ -1,0 +1,1000 @@
+/* ===================================
+FUTEBOL AMISTOSO 2026
+STYLE.CSS - PARTE 1
+=================================== */
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#00142d;
+color:#ffffff;
+overflow-x:hidden;
+}
+
+/* PALETA FIFA */
+
+:root{
+
+
+--blue-dark:#002654;
+--blue-fifa:#0057B8;
+--blue-light:#00AEEF;
+
+--gold:#FFD700;
+
+--green:#00B140;
+
+--white:#FFFFFF;
+
+--glass-bg:rgba(255,255,255,0.08);
+
+--glass-border:rgba(255,255,255,0.15);
+
+
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* TIPOGRAFIA */
+
+h1,h2,h3{
+font-family:'Montserrat',sans-serif;
+}
+
+h1{
+font-weight:800;
+}
+
+h2{
+font-weight:700;
+}
+
+h3{
+font-weight:600;
+}
+
+p{
+line-height:1.7;
+}
+
+/* HERO */
+
+.hero{
+
+
+position:relative;
+
+width:100%;
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+
+}
+
+/* VIDEO */
+
+.hero-video{
+
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+z-index:1;
+
+
+}
+
+/* OVERLAY */
+
+.overlay{
+
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,0.60);
+
+z-index:2;
+
+
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+
+
+position:relative;
+
+z-index:3;
+
+max-width:900px;
+
+padding:20px;
+
+
+}
+
+/* LOGO */
+
+.hero-logo{
+
+
+width:120px;
+
+margin-bottom:25px;
+
+filter:drop-shadow(0 0 20px rgba(255,215,0,.6));
+
+
+}
+
+/* TITULO */
+
+.hero-content h1{
+
+
+font-size:clamp(2.5rem,7vw,5.5rem);
+
+line-height:1.1;
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+color:var(--white);
+
+text-shadow:
+0 0 20px rgba(0,174,239,.5);
+
+
+}
+
+/* SUBTITULO */
+
+.hero-content p{
+
+
+font-size:1.2rem;
+
+max-width:700px;
+
+margin:0 auto 35px;
+
+color:#eaeaea;
+
+
+}
+
+/* BOTÕES */
+
+.hero-buttons{
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+
+}
+
+/* BOTÃO BASE */
+
+.btn{
+
+
+text-decoration:none;
+
+padding:15px 32px;
+
+border-radius:50px;
+
+font-weight:600;
+
+transition:.3s ease;
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-width:220px;
+
+
+}
+
+/* BOTÃO PRINCIPAL */
+
+.btn-primary{
+
+
+background:linear-gradient(
+    135deg,
+    var(--gold),
+    #ffef87
+);
+
+color:#000;
+
+
+}
+
+/* BOTÃO SECUNDÁRIO */
+
+.btn-secondary{
+
+
+border:2px solid rgba(255,255,255,.3);
+
+color:#fff;
+
+backdrop-filter:blur(15px);
+
+background:rgba(255,255,255,.08);
+
+
+}
+
+/* HOVER */
+
+.btn:hover{
+
+
+transform:translateY(-3px) scale(1.05);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.3);
+
+
+}
+
+/* SEÇÕES */
+
+section{
+
+
+padding:90px 0;
+
+
+}
+
+/* GLASS */
+
+.glass{
+
+
+background:var(--glass-bg);
+
+backdrop-filter:blur(20px);
+
+border:1px solid var(--glass-border);
+
+border-radius:24px;
+
+
+}
+
+/* ANIMAÇÃO HERO */
+
+@keyframes heroFloat{
+
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-8px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+
+}
+
+.hero-logo{
+
+
+animation:heroFloat 4s ease-in-out infinite;
+
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+
+.hero-content h1{
+
+    font-size:2.8rem;
+
+}
+
+.hero-content p{
+
+    font-size:1rem;
+
+}
+
+.btn{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+
+}
+/* ===================================
+STYLE.CSS - PARTE 2
+Countdown + Informações +
+Formulário + Aviso + Footer +
+Modal
+=================================== */
+
+/* COUNTDOWN */
+
+.countdown-section{
+
+
+background:
+linear-gradient(
+    180deg,
+    #00142d,
+    #002654
+);
+
+text-align:center;
+
+
+}
+
+.countdown-section h2{
+
+
+margin-bottom:50px;
+
+font-size:2.2rem;
+
+color:var(--gold);
+
+
+}
+
+.countdown{
+
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:25px;
+
+
+}
+
+.time-box{
+
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:20px;
+
+padding:30px 20px;
+
+transition:.3s ease;
+
+
+}
+
+.time-box:hover{
+
+
+transform:translateY(-8px);
+
+
+}
+
+.time-box span{
+
+
+display:block;
+
+font-size:3rem;
+
+font-weight:800;
+
+color:var(--gold);
+
+font-family:'Montserrat',sans-serif;
+
+
+}
+
+.time-box small{
+
+
+display:block;
+
+margin-top:10px;
+
+font-size:1rem;
+
+color:#ddd;
+
+
+}
+
+@keyframes pulse{
+
+
+0%{
+    transform:scale(1);
+}
+
+50%{
+    transform:scale(1.05);
+}
+
+100%{
+    transform:scale(1);
+}
+
+
+}
+
+.time-box span{
+
+
+animation:pulse 2s infinite;
+
+
+}
+
+/* INFORMAÇÕES */
+
+.info-section{
+
+
+background:#002654;
+
+
+}
+
+.info-section h2{
+
+
+text-align:center;
+
+margin-bottom:50px;
+
+font-size:2.3rem;
+
+
+}
+
+.info-grid{
+
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:25px;
+
+
+}
+
+.info-card{
+
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:24px;
+
+padding:35px 25px;
+
+text-align:center;
+
+transition:.3s ease;
+
+
+}
+
+.info-card:hover{
+
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.3);
+
+
+}
+
+.icon{
+
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+
+}
+
+.info-card h3{
+
+
+margin-bottom:12px;
+
+color:var(--gold);
+
+
+}
+
+.info-card p{
+
+
+color:#e8e8e8;
+
+
+}
+
+/* FORMULÁRIO */
+
+.form-section{
+
+
+background:
+linear-gradient(
+    180deg,
+    #002654,
+    #00142d
+);
+
+
+}
+
+.form-card{
+
+
+max-width:650px;
+
+margin:auto;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:28px;
+
+padding:50px 35px;
+
+text-align:center;
+
+
+}
+
+.trophy{
+
+
+width:90px;
+
+margin-bottom:20px;
+
+
+}
+
+.form-card h2{
+
+
+margin-bottom:35px;
+
+
+}
+
+.form-group{
+
+
+margin-bottom:25px;
+
+text-align:left;
+
+
+}
+
+.form-group label{
+
+
+display:block;
+
+margin-bottom:8px;
+
+
+}
+
+.form-group input{
+
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:1rem;
+
+outline:none;
+
+
+}
+
+.checkbox-group{
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+margin-bottom:30px;
+
+
+}
+
+.checkbox-group input{
+
+
+width:18px;
+
+height:18px;
+
+
+}
+
+.submit-btn{
+
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+linear-gradient(
+    135deg,
+    var(--gold),
+    #ffe97a
+);
+
+color:#000;
+
+font-weight:700;
+
+font-size:1rem;
+
+cursor:pointer;
+
+transition:.3s ease;
+
+
+}
+
+.submit-btn:hover{
+
+
+transform:scale(1.03);
+
+box-shadow:
+0 15px 35px rgba(255,215,0,.3);
+
+
+}
+
+/* AVISO */
+
+.warning-section{
+
+
+background:#001225;
+
+
+}
+
+.warning-card{
+
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:24px;
+
+padding:45px 30px;
+
+
+}
+
+.warning-card h2{
+
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+
+}
+
+.warning-card p{
+
+
+margin-bottom:10px;
+
+
+}
+
+/* FOOTER */
+
+footer{
+
+
+background:#000c1c;
+
+text-align:center;
+
+padding:30px 20px;
+
+
+}
+
+footer p{
+
+
+color:#ccc;
+
+
+}
+
+/* MODAL */
+
+.modal{
+
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+padding:20px;
+
+
+}
+
+.modal-content{
+
+
+width:100%;
+
+max-width:600px;
+
+background:#002654;
+
+border-radius:24px;
+
+padding:40px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.15);
+
+animation:modalShow .35s ease;
+
+
+}
+
+.modal-content h2{
+
+
+margin-bottom:20px;
+
+color:var(--gold);
+
+
+}
+
+.modal-content p{
+
+
+margin-bottom:12px;
+
+
+}
+
+.modal-content button{
+
+
+margin-top:25px;
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-weight:700;
+
+background:var(--gold);
+
+color:#000;
+
+
+}
+
+@keyframes modalShow{
+
+
+from{
+
+    opacity:0;
+
+    transform:
+    translateY(25px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+
+.countdown{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+}
+
+
+}
+
+@media(max-width:600px){
+
+
+.countdown{
+
+    grid-template-columns:1fr;
+
+}
+
+.time-box span{
+
+    font-size:2.5rem;
+
+}
+
+.form-card{
+
+    padding:35px 20px;
+
+}
+
+.modal-content{
+
+    padding:30px 20px;
+
+}
+
+.info-section h2,
+.countdown-section h2{
+
+    font-size:1.8rem;
+
+}
+
+
+}
+
